@@ -1,0 +1,118 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  text-shadow: 1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.Main {
+  width: 500px;
+  margin: auto;
+  font-size: 70px;
+  overflow: hidden;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.buttons {
+  width: 140px;
+  float: left;
+  margin-top: 25px;
+}
+
+.arrow-down_cad, .arrow-down_eur, .arrow-down_gbp, .arrow-down_usd {
+  width: 0; 
+  height: 0; 
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  
+  border-top: 25px solid #f00;
+  float: left;
+}
+
+.arrow-up_cad, .arrow-up_eur, .arrow-up_gbp, .arrow-up_usd {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+
+  border-bottom: 25px solid orange;
+  float: left;
+}
+
+.arrow-up_eur_1 {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+
+  border-bottom: 25px solid orange;
+  float: left;
+}
+
+.money {
+  float: left;
+}
+
+.arrows {
+  float: left;
+  padding-left: 10px;
+  padding-top: 8%;
+  margin: 0;
+  display: inline-block;
+  width: 200px;
+}
+
+.money_up {
+  color: orange;
+  text-shadow: 0 0 orange, 0 0 orange, 0 0 orange, 0 0 orange;
+}
+
+.money_down {
+  color: red;
+  text-shadow: 0 0 red, 0 0 red, 0 0 red, 0 0 red;
+}
+
+#reset_arrows {
+  float: right;
+  background-color: #1d2124;
+  color: gray;
+}
+
+#symbol_up {
+  color: orange;
+}
+
+#symbol_down {
+  color: red;
+}
+
+#button_up_cad, #button_up_eur, #button_up_gbp, #button_up_usd {
+  background-color: transparent;
+  float: right;
+}
+
+#button_down_cad, #button_down_eur, #button_down_gbp, #button_down_usd {
+  background-color: transparent;
+  float: right;
+}
+
+.reset_div {
+  width: 420px;
+  margin: auto;
+  text-align: center;
+}
+
+#video-background {
+  /*  making the video fullscreen  */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+}
