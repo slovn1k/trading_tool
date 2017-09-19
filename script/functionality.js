@@ -4,21 +4,19 @@ var count_euro_div_up = 0, count_euro_div_down = 0,
     count_cad_div_up = 0, count_cad_div_down = 0,
     count_usd_div_up = 0, count_usd_div_down = 0;
 
+var click_counter = 0;
+
 $(document).click( function () {
     if(count_euro == 3) {
         $("#button_up_eur").hide();
         $("#button_down_eur").hide();
     }
 
-    function euro_color() {
-        if(count_euro_div_up == 3) {
-            $("#eur").addClass("money_up");
-        } else if(count_euro_div_down == 3) {
-            $("#eur").addClass("money_down");
-        }
+    if(count_euro_div_up == 3) {
+        $("#eur").addClass("money_up");
+    } else if(count_euro_div_down == 3) {
+        $("#eur").addClass("money_down");
     }
-
-    euro_color();
 
     if(count_gbp == 3) {
         $("#button_up_gbp").hide();
@@ -56,16 +54,21 @@ $(document).click( function () {
 //----------------------------------------------------------------------------------------------------------------------
 
     $(".arrow-up_eur").click(function () {
-
-        $(".arrow-up_eur").replaceWith("<div class='arrow-down_eur'></div>");
-        count_euro -= 1;
-        count_euro += 1;
-        count_euro_div_up -= 1;
-        count_euro_div_down += 1;
-
+        $(this).replaceWith("<div class='arrow-down_eur'></div>");
+        console.clear();
+        count_euro_div_up -=1;
+        count_euro_div_down +=1;
+        click_counter++;
+        console.log("Number of clicks " + click_counter);
+        console.log("Euro divs " + count_euro);
+        console.log("Euro div up " + count_euro_div_up);
+        console.log("Euro div down " + count_euro_div_down);
     });
 
 });
+
+
+
 
 $("#reset_arrows").click( function () {
     location.reload();
@@ -76,6 +79,10 @@ $("#button_up_eur").click( function () {
     $(".euro").append($arrow_up_eur);
     count_euro += 1;
     count_euro_div_up += 1;
+    console.clear();
+    console.log("Euro Divs" + count_euro);
+    console.log("Euro divs up " + count_euro_div_up);
+    console.log("Euro div down: " + count_euro_div_down);
 });
 
 $("#button_down_eur").click( function () {
@@ -83,6 +90,10 @@ $("#button_down_eur").click( function () {
     $(".euro").append($arrow_down_eur);
     count_euro += 1;
     count_euro_div_down += 1;
+    console.clear();
+    console.log("Euro divs " + count_euro);
+    console.log("Euro divs down " + count_euro_div_down);
+    console.log("Euro divs up: " + count_euro_div_up);
 });
 
 $("#button_up_gbp").click( function () {
@@ -126,7 +137,3 @@ $("#button_down_cad").click( function () {
     count_cad += 1;
     count_cad_div_down += 1;
 });
-
-
-
-
