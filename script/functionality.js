@@ -4,7 +4,7 @@ var count_euro_div_up = 0, count_euro_div_down = 0,
     count_cad_div_up = 0, count_cad_div_down = 0,
     count_usd_div_up = 0, count_usd_div_down = 0;
 
-var click_counter = 0;
+var click_counter = 0, clicker = 0;
 
 $(document).click( function () {
     if(count_euro == 3) {
@@ -55,15 +55,15 @@ $(document).click( function () {
 
     $(".arrow-up_eur").click(function () {
         $(this).replaceWith("<div class='arrow-down_eur'></div>");
+        count_euro_div_up --;
+        count_euro_div_down ++;
         console.clear();
-        count_euro_div_up -=1;
-        count_euro_div_down +=1;
-        click_counter++;
-        console.log("Number of clicks " + click_counter);
         console.log("Euro divs " + count_euro);
         console.log("Euro div up " + count_euro_div_up);
         console.log("Euro div down " + count_euro_div_down);
     });
+
+
 
 });
 
